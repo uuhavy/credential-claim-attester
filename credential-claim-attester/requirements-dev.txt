@@ -1,0 +1,4 @@
+-r requirements.txt
+genlayer-test[sim]==0.29.2
+pytest==9.1.1
+numpy>=2,<3
