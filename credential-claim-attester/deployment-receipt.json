@@ -1,0 +1,15 @@
+{
+  "transaction_hash": "0xfb4f2784ae7eb7504e4b71baf13c0287dd0cc37d5fba034dd77ab361b89edd21",
+  "contract_address": "0x7516772B9B955bdf3bCCfC86DBf01edDb20Fa322",
+  "status": "FINALIZED",
+  "execution_result": "SUCCESS",
+  "created_at": "2026-09-21T12:48:47.692596+00:00",
+  "leader_only": false,
+  "votes": {
+    "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "idle",
+    "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+    "0x772ffCd1dF6Cc566eC4b8d3f4F4f8eBbb6B36C84": "agree",
+    "0x90402341F0B0e97b23023c0a87de957FB7148E0F": "agree",
+    "0xacc2459F341D7a887bcA8FAA62F1EC9378d4Bc67": "idle"
+  }
+}

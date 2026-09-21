@@ -1,0 +1,71 @@
+{
+  "verified_at_utc": "2026-09-21T12:50:58.718905+00:00",
+  "network": "studionet",
+  "chain_id": 61999,
+  "rpc_url": "https://studio.genlayer.com/api",
+  "contract_address": "0x7516772B9B955bdf3bCCfC86DBf01edDb20Fa322",
+  "transaction_hash": "0xfb4f2784ae7eb7504e4b71baf13c0287dd0cc37d5fba034dd77ab361b89edd21",
+  "deployment_status": "FINALIZED",
+  "deployment_execution": "SUCCESS",
+  "deployed_source_matches_repository": true,
+  "source_sha256": "d6729116aa1fd9ad3902be6ec8f2f92d0f10bb605ffdaaf3b853e48ecf0a7cfc",
+  "source_bytes": 7766,
+  "schema": {
+    "ctor": {
+      "params": [],
+      "kwparams": {}
+    },
+    "methods": {
+      "get_attestation": {
+        "params": [
+          [
+            "attestation_id",
+            "string"
+          ]
+        ],
+        "kwparams": {},
+        "readonly": true,
+        "ret": "string"
+      },
+      "get_claims_by_address": {
+        "params": [
+          [
+            "address",
+            "string"
+          ]
+        ],
+        "kwparams": {},
+        "readonly": true,
+        "ret": "string"
+      },
+      "get_count": {
+        "params": [],
+        "kwparams": {},
+        "readonly": true,
+        "ret": "int"
+      },
+      "submit_claim": {
+        "params": [
+          [
+            "skill_claim",
+            "string"
+          ],
+          [
+            "evidence_url",
+            "string"
+          ]
+        ],
+        "kwparams": {},
+        "readonly": false,
+        "ret": "string",
+        "payable": false
+      }
+    }
+  },
+  "read_call": {
+    "method": "get_count",
+    "args": [],
+    "result": 0
+  },
+  "authentication": "none; public RPC; no browser session or saved key"
+}

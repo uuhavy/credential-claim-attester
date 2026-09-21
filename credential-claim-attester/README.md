@@ -2,9 +2,12 @@
 
 ## Deployment
 
-- **CONTRACT_ADDRESS:** `0x8f0Cfbf5B297bD75a665e9c8A42082cAF99ce17D`
+- **CONTRACT_ADDRESS:** `0x7516772B9B955bdf3bCCfC86DBf01edDb20Fa322`
 - **NETWORK:** `studionet`
-- **Evidence status:** deployment reported by the builder; the supplied Studio screenshot shows Deploy marked ACCEPTED. On 2026-09-14, a read-only `gen_getContractSchema` request to `https://studio.genlayer.com/api` with this exact address returned `-32001: Contract ... not found`. Public RPC verification and a live claim result are not confirmed. Recheck visibility before portal submission.
+- **Explorer:** [public contract](https://explorer-studio.genlayer.com/address/0x7516772B9B955bdf3bCCfC86DBf01edDb20Fa322)
+- **Deployment transaction:** [0xfb4f2784ae7eb7504e4b71baf13c0287dd0cc37d5fba034dd77ab361b89edd21](https://explorer-studio.genlayer.com/tx/0xfb4f2784ae7eb7504e4b71baf13c0287dd0cc37d5fba034dd77ab361b89edd21)
+- **Evidence status:** FINALIZED / SUCCESS, verified 2026-09-21 on public studionet RPC (chain ID 61999). `gen_getContractCode` matches the repository source byte-for-byte; `gen_getContractSchema` returns all four methods; real `get_count()` returns `0`. Explorer independently displays the contract and successful finalized deployment. See [verification JSON](deployment-verification.json), [receipt summary](deployment-receipt.json) and [manifest](deployment-studionet.json).
+- **Correction:** the previous address `0x8f0Cfbf5B297bD75a665e9c8A42082cAF99ce17D` did not resolve and must not be reused for submission. The same unchanged source was redeployed publicly. The contract has no owner/admin field; the dedicated test deployer does not acquire privileged rights.
 - **Local validation:** all **66 tests passed** using a five-validator local glsim. See [VALIDATION.md](VALIDATION.md) for environment and compatibility fixes. This is not a production network result.
 
 ### Worked example — illustrative input and expected output
@@ -151,3 +154,17 @@ Trang có thể thay đổi giữa leader và validator; nội dung sau 6.000 k�
 Header version và dependency hash được giữ nguyên theo yêu cầu; trạng thái kiểm tra thực tế xem `VALIDATION.md`.
 
 The preparation scripts only repair the pinned test tooling: Windows open-file cleanup and glsim schema/class discovery behind its calldata proxy. They do not change contract execution, storage, mocks or voting rules. See [REVIEW.md](REVIEW.md) for the primitive review and limitations.
+
+### Reproduce public verification
+
+From this project directory with requirements-dev.txt installed:
+
+```sh
+python scripts/verify_public.py
+```
+
+This requires no browser login or saved wallet key. It checks chain ID, finalized
+deployment, deployed source, schema and a real read. It records current results
+in deployment-verification.json. The deployment key is kept only in the local,
+gitignored .env.studionet-deployer file; it is not needed to verify or use the
+public contract. No mock or leader-only configuration was used for deployment.

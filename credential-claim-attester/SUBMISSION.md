@@ -8,12 +8,15 @@ Title: CredentialClaimAttester - Reusable Credential Evidence Attestations
 
 Description:
 
-CredentialClaimAttester assesses whether public web evidence supports a wallet-submitted skill, experience or certification claim and stores an append-only attestation. GenLayer run_nondet_unsafe uses a custom validator that independently reads the evidence and reassesses the claim, agreeing on the MEANING of the decision, not JSON format: verdict and confidence band must match. Different verdicts reject. DAO member vetting, job-board screening and grant collaborator qualification can reuse the same API. It ships with 66 passing local tests and documentation, with no frontend. Builder-reported studionet deployment: 0x8f0Cfbf5B297bD75a665e9c8A42082cAF99ce17D; public RPC re-verification is pending.
+CredentialClaimAttester assesses public web evidence for wallet-submitted skill, experience and certification claims, storing append-only attestations. GenLayer run_nondet_unsafe uses a custom validator that independently rereads evidence and reassesses the claim, agreeing on the MEANING of the decision, not JSON format: verdict and confidence band must match. Reusable for DAO member vetting, job-board screening and grant collaborator qualification. Includes 66 passing local tests and docs; no frontend. Public studionet deployment: 0x7516772B9B955bdf3bCCfC86DBf01edDb20Fa322, FINALIZED/SUCCESS. Public RPC confirms source matches GitHub byte-for-byte, all four API methods resolve, and get_count() returns 0. This replaces the previously unresolvable address.
 
-Evidence URL: https://github.com/uuhavy/credential-claim-attester
+Evidence 1 (Studio contract): https://explorer-studio.genlayer.com/address/0x7516772B9B955bdf3bCCfC86DBf01edDb20Fa322
 
-Paste the GitHub URL into the Evidence field. Submit this yourself at
+Evidence 2 (GitHub repository): https://github.com/uuhavy/credential-claim-attester
+
+Add BOTH URLs as separate items in Evidence & Supporting Information; links
+inside Description do not replace evidence entries. Submit this yourself at
 https://portal.genlayer.foundation under Builder -> Intelligent Contracts,
-after completing the reCAPTCHA. Before submitting, recheck the studionet
-deployment's public visibility; the current verification limitation is recorded
-in README.md and VALIDATION.md.
+after completing the reCAPTCHA. Use Resubmit to correct the rejected contribution.
+The new deployment and public source verification are documented in README.md,
+VALIDATION.md and deployment-verification.json.

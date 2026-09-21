@@ -48,9 +48,20 @@ errors; 55 passed/1 failed/10 errors. Final full rerun: all 66 passed.
 
 ## Deployment evidence
 
-Builder-reported studionet deployment:
-`0x8f0Cfbf5B297bD75a665e9c8A42082cAF99ce17D`.
-The supplied screenshot shows ACCEPTED. Exact-address public Studio
-gen_getContractSchema returned -32001, contract not found, on 2026-09-14.
-Public verification is therefore unconfirmed. README output is explicitly
-illustrative/expected, with no fabricated live transaction or claim result.
+Updated 2026-09-21: the old address did not resolve and was rejected by the portal.
+The unchanged source was redeployed to public studionet:
+`0x7516772B9B955bdf3bCCfC86DBf01edDb20Fa322`.
+
+- Deployment transaction: `0xfb4f2784ae7eb7504e4b71baf13c0287dd0cc37d5fba034dd77ab361b89edd21`.
+- FINALIZED and execution SUCCESS; leader-only disabled, no mocks.
+- Public RPC chain ID: 61999.
+- Deployed source: 7,766 bytes; matches repository byte-for-byte and SHA256 above.
+- Public schema returns all four expected methods.
+- Actual read `get_count()` returned 0 through an independent temporary sender,
+  without browser authentication or the deployment key.
+- Explorer displays the contract, deploy transaction, FINALIZED and SUCCESS.
+
+Evidence is in deployment-verification.json, deployment-studionet.json and the
+compact deployment-receipt.json. Reproduce using scripts/verify_public.py.
+The README credential-verdict example remains illustrative/expected; only the
+deployment and get_count read are real network results in this correction.
